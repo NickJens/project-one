@@ -3,6 +3,35 @@ require 'rails_helper'
 feature 'visit the site' do
   scenario 'Hello World!' do
     visit '/'
-    expect(page).to have_content 'Hello World!'
+    expect(page).to have_content 'Hi, there!'
   end
+
+  scenario 'Privacy' do
+    visit '/privacy'
+    expect(page).to have_content 'Privacy'
+  end
+
+  scenario 'Terms' do
+    visit '/terms'
+    expect(page).to have_content 'Terms'
+  end
+
+  scenario 'Users' do
+    visit '/users'
+    expect(page).to have_content 'Users'
+  end
+
+  scenario 'Events' do
+    visit '/events'
+    expect(page).to have_content 'Events'
+  end
+
+  scenario 'Profile' do
+    visit '/profile'
+    expect(page).to have_content 'Profile'
+  end
+
+
 end
+
+

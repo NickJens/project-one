@@ -1,5 +1,20 @@
 class SiteController < ApplicationController
   def index
-    render text: "Hello World!"
   end
+
+  def privacy
+  end
+
+  def terms
+  end
+
+  def users
+  end
+
+  def events
+  end
+
+  def profile
+  end
+
 end
