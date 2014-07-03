@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   root 'site#index'
 
-  get 'privacy' => 'site#privacy'
-  get 'terms'   => 'site#terms'
-  get 'users'   => 'site#users'
-  get 'events'   => 'site#events'
-  get 'profile'   => 'site#profile'
+  get 'site'    => 'site#index'
+  get 'users'   => 'users#index'
+  get 'events'  => 'events#index'
+  get 'profile' => 'profile#index'
+  get 'login'   => 'login#index'
 
+  post 'url'    => 'url#create'
+  get 'url'     => 'url#index'
 
 end
 
