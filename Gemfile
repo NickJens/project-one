@@ -11,6 +11,7 @@ gem 'jquery-ui-rails'
 gem 'noty-rails'
 
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'devise'
 
 gem 'spring',        group: :development
 

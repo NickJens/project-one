@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'visit the site' do
   scenario 'Hello World!' do
     visit '/'
-    expect(page).to have_content 'Hi, there!'
+    expect(page).to have_content 'Sign in'
   end
 
   scenario 'Users' do
@@ -15,12 +15,6 @@ feature 'visit the site' do
     visit '/events'
     expect(page).to have_content 'Events'
   end
-
-  scenario 'Profile' do
-    visit '/profile'
-    expect(page).to have_content 'Profile'
-  end
-
 
 end
 

@@ -1,6 +1,8 @@
 class SiteController < ApplicationController
   def index
-    flash.now[:alert] = "No URL yet"
+    unless user_signed_in?
+      redirect_to login_path
+    end
   end
 
   def users
