@@ -1,7 +1,19 @@
 <h1>Events!</h1>
 
-<form action="" id='findForm'>
-  <button>Find Event</button>
+<a href="/new">Create New Event</a>
 
-
+<form action="/events" method="get">
+  <input type="text" name="search" />
+  <input type="submit" value="Find events" name='find' />
 </form>
+
+<h2>Events</h2>
+
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <%= event.name %>
+      <%= event.location %>
+    </li>
+  <% end %>
+</ul>
