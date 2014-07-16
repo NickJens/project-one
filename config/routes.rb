@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :sessions
   devise_for :users, :controllers => { registrations: 'registrations'}
   devise_scope :user do
     get 'login' => "devise/sessions#new"
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
 
   get 'site'    => 'site#index'
   get 'users'   => 'users#index'
-  get 'events'  => 'events#index'
 
 
   post 'url'    => 'url#create'
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
 
   get 'events' => 'events#index'
+  get 'events/:id' => 'events#show'
   get 'new' => 'events#new'
   post 'create' => 'events#create'
 

@@ -1,19 +1,34 @@
-<h1>Events!</h1>
+<h1>Events</h1>
 
-<a href="/new">Create New Event</a>
+
 
 <form action="/events" method="get">
-  <input type="text" name="search" />
-  <input type="submit" value="Find events" name='find' />
+  <input class="text_field" type="text" name="search" />
+  <input class="btn btn-default find-events" id="find" type="submit" value="Find events" name='find' />
 </form>
 
-<h2>Events</h2>
+<a href="/new">
+  <input class="btn btn-default create_button" type="button" name="so_link" value="create event">
+</a>
 
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= event.name %>
-      <%= event.location %>
-    </li>
-  <% end %>
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    list events
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <% @events.each do |event| %>
+      <li class="location" data-lat="<%= event.lat %>" data-lon="<%= event.lon %>" data-name="<%= event.name %>" data-address="<%= event.address %>" data-date="<%= event.date %>">
+
+        <%= event.name %>
+        <%= event.address %>
+        <%= event.date %>
+
+      </li>
+    <% end %>
 </ul>
+</div>
+
+<div id="map" data-lat="lol"></div>
+

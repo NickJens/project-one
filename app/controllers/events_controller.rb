@@ -5,38 +5,45 @@ class EventsController < ApplicationController
     if @query.blank?
       @events = Events.all
     else
-      @events = Events.where("name like ? or location like ?", '%' + @query + '%', '%' + @query + '%')
+      @events = Events.where("name like ? or address like ?", '%' + @query + '%', '%' + @query + '%')
       Events.where(name: "Junk")
     end
   end
 
-  def new
+  def show
+    @event = Events.find(params[:id])
+
   end
 
   def create
 
-    name = params[:name]
-    latitude = params[:lat]
-    longitude = params[:lon]
-    location = params[:location]
-    date = params[:date]
+    @name = params[:name]
+    @latitude = params[:lat]
+    @longitude = params[:lon]
+    @address = params[:address]
+    @date = params[:date]
 
-    if date.blank?
-      date = Time.now
+    if @date.blank?
+      @date = Time.now
     end
 
-    event = Events.new
-    event.name = name
-    event.location = location
-    event.date = date
+    @event = Events.new
+    @event.name = @name
+    @event.address = @address
+    @event.date = @date
+    @event.lat = @latitude
+    @event.lon = @longitude
 
-    if event.save
+
+
+    if @event.save
       puts "Cool"
+      redirect_to "/events/#{@event.id}"
     else
       puts "Hot"
     end
 
-    redirect_to events_path
+    # render :show
   end
 
   def edit

@@ -26,11 +26,11 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="/"><span class="glyphicon glyphicon-home"> Home</a></li>
             <% if user_signed_in? %>
-            <li><a href="/events">Events</a></li>
+            <li><a href="/events"> <span class="glyphicon glyphicon-calendar"></span> Events</a></li>
             <% end %>
-            <li><a href="/users">Users</a></li>
+            <li><a href="/users"><span class="glyphicon glyphicon-user"></span> Users </a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
@@ -68,6 +68,6 @@
 
   </div>
 
-  <%= flash_noty_script_tag %>
-</body>
+<!--   <%= flash_noty_script_tag %>
+ --></body>
 </html>

@@ -1,0 +1,25 @@
+<h1>Your event</h1>
+
+<div>
+  <ul>
+      <li class="location" id="map" data-lat="<%= @event.lat %>" data-lon="<%= @event.lon %>" data-name="<%= @event.name %>" data-address="<%= @event.address %>" data-date="<%= @event.date %>">
+
+      <%= @event.name %>
+      <%= @event.address %>
+      <%= @event.date %>
+
+      </li>
+
+
+  </ul>
+</div>
+
+<form action="/events" method="get">
+  <input class="btn btn-default" type="submit" value="Back to events" name='back'/>
+</form>
+
+<button type="button" class="btn btn-default" ><a href="/new">Create New Event</a></button>
+
+
+
+
